@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon footprints</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='energystyle.css')}}">
+</head>
+<body>
+    <header>
+        <img src="{{url_for('static', filename= 'images/RolsaTechnology.png')}}" alt="Rolsa technology logo" />
+        <h1>Rolsa Technology</h1>
+        <p>Provider of green future</p>
+    </header>
+    <nav class="main">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/greentechnology">Green energy</a></li>
+            <li><a href="/tariffs">Schedule your consultation or installation</a></li>
+            <li><a href="/carbon">Calculate your carbon footprints</a></li>
+            <li><a href="/energy">Calculate energy usage</a></li>
+        </ul>
+    </nav>
+    <nav class="register">
+
+        <ul>
+            {% if session %}
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+            {% else %}
+            <li><a href="login">Log in</a></li>
+            <li><a href="register">Register</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <br>
+    <div>
+        <form action="/carbon" method="post">
+            <h2>Carbon footprints calculator </h2>
+            <p>Answer for several questions and find out how many kg of carbon you use</p>
+            <label for="electricity"> Enter monthly electricity usage (kWh) </label>
+            <input type="number" id="electricity" name="electricity" min="0" required>
+            <label for="gas">Enter monthly gas usage (m³) </label>
+            <input type="number" id="gas" name="gas" min="0" required>
+            <label for="transport">Select your transport type</label>
+            <select name="transport" required>
+                <option value="" disabled selected> --Choose transport type-- </option>
+                <option value="car">Car</option>
+                <option value="bus">Bus</option>
+                <option value="train">Train</option>
+                <option value="bike">Bike</option>
+            </select>
+            <label for="shortflights">How many domestic flights you make per year </label>
+            <input type="number" id="shortflights" name="shortflights" min="0" required>
+            <label for="longfliets">How many external flights you make per year </label>
+            <input type="number" id="longfliets" name="longfliets" min="0" required>
+            <label for="diet">Select your diet type</label>
+            <select name="diet" required>
+
+                <option value="" disabled selected> --Choose diet type-- </option>
+                <option value="meat">Meat</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="vegan">Vegan</option>
+            </select>
+            <button type="submit">Calculate carbon footprint</button>
+        </form>
+    </div>
+
+</body>
+</html>

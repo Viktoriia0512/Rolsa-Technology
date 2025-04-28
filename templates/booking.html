@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='energystyle.css')}}">
+</head>
+<body>
+    <header>
+        <img src="{{url_for('static', filename= 'images/RolsaTechnology.png')}}" alt="Rolsa technology logo" />
+        <h1>Rolsa Technology</h1>
+        <p>Provider of green future</p>
+    </header>
+    <nav class="main">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/greentechnology">Green energy</a></li>
+            <li><a href="/tariffs">Schedule your consultation or installation</a></li>
+            <li><a href="/carbon">Calculate your carbon footprints</a></li>
+            <li><a href="/energy">Calculate energy usage</a></li>
+        </ul>
+    </nav>
+    <nav class="register">
+
+        <ul>
+            {% if session %}
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+            {% else %}
+            <li><a href="login">Log in</a></li>
+            <li><a href="register">Register</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <br>
+    <div>
+
+
+
+        <form action="/booking" method="post">
+            {% with messages= get_flashed_messages() %}
+            {% if messages %}
+            <div class="flash-messages">
+                {% for message in messages %}
+                <div class="alert">
+                    {{message}}
+                </div>
+                {%endfor%}
+
+            </div>
+            {% endif%}
+            {% endwith %}
+            <h2>Time to book your appoitment for {{tariff_name}}</h2>
+            <input type="hidden" id="tariff_id" name="tariff_id" value="{{tariff_id}}">
+            <input type="hidden" id="tariff_price" name="tariff_price" value="{{tariff_price}}">
+            <label for="date">Choose  the date</label>
+            <input type="date" id="date" name="date" placeholder="please, select date of the appoitment" required>
+            <label for="time">Choose the time</label>
+            <input type="time" id="time" name="time" min="09:00" max="18:00" step="1800" placeholder="please, select time of the appoitment" required>
+            <button type="submit">Confirm booking</button>
+        </form>
+
+    </div>
+   
+</body>
+</html>

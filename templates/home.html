@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rolsa Technology</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='homestyle.css')}}">
+</head>
+<body>
+    <header>
+        <img src="{{url_for('static', filename= 'images/RolsaTechnology.png')}}" alt="Rolsa technology logo" />
+        <h1>Rolsa Technology</h1>
+        <p>Provider of green future</p>
+    </header>
+    <nav class="main">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/greentechnology">Green energy</a></li>
+            <li><a href="/tariffs">Schedule your consultation or installation</a></li>
+            <li><a href="/carbon">Calculate your carbon footprints</a></li>
+            <li><a href="/energy">Calculate energy usage</a></li>
+        </ul>
+    </nav>
+    <nav class="register">
+
+        <ul>
+            {% if session %}
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+            {% else %}
+            <li><a href="login">Log in</a></li>
+            <li><a href="register">Register</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <br>
+    <div class="section">
+        <h2>Our Service</h2>
+        <p>Rolsa Tehnology is a small local company, which provide installation or solar panels, EV chargers and energy menegment system. We can help you to reduce your carbon footprints, safe more money and improve your planet</p>
+    </div>
+    <div class="section" id="solar_panel">
+        <h2>Solar panels</h2>
+        <img src="{{url_for('static', filename= 'images/solarPanel.jpg')}}" alt="Solar panel" />
+        <p>Our company specilizes in the installation and maintanance of high-quality solar panels. </p>
+    </div>
+    <br>
+    <div class="section" id="ev_charger">
+        <h2>EV charger</h2>
+        <img src="{{url_for('static', filename= 'images/ev-charger.jpg')}}" alt="EV charger" />
+        <p>
+            Our company provide the best in the UK EV chargers, for your cars.
+            They safe time for charging and make less evergy.
+            Allows you to safe more money.
+            Also, it helps to mitigate carbon usage.<br> <b>Green, safty future starts with you. </b>
+        </p>
+    </div>
+    <br>
+    <div class="section" id="managment-system">
+        <h2>Managment system</h2>
+        <img src="{{url_for('static', filename= 'images/managment-system.jpg')}}" alt="managment system " />
+        <p>
+            Don't have time to manage your bils or just tired to do that? <br>
+            Rolsa Technology provide you with the application of future, where you can:
+            <ul>
+                <li>Manage your bils and data 24/7.</li>
+                <li>Find efectively reports for your energy usage. </li>
+                <li>Find information how to reduce your energy usage.</li>
+            </ul>
+        </p>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 Rolsa Technology. All Rights Reserved.</p>
+            <p>Our contact info:</p>
+            <ul>
+                <li>Tel: 0161 5354 1856</li>
+                <li>Email: RolsaTechnolohy@greenenergy.com</li>
+                <li>Address: 10 Main street London L1 4RT</li>
+            </ul>
+        </div>
+
+
+    </footer>
+</body>
+</html>

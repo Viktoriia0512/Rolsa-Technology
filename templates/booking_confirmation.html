@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation Booking</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='bookingstyle.css')}}">
+</head>
+
+<body>
+    <div class="confirmation">
+    <h3>Confirmation</h3>
+    <p>Your appoitment was sucsessfully booked:</p>
+    <p>Date:{{date}}</p>
+    <p>Time: {{time}}</p>
+    <a href="/" class="btn">Back to home page</a>
+    </div>
+</body>
+</html>

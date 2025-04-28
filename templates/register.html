@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='register.css')}}">
+</head>
+<body>
+
+    <div class="container">
+        {% with messages= get_flashed_messages() %}
+        {% if messages %}
+        <div class="flash-messages">
+            {% for message in messages %}
+            <div class="alert">
+                {{message}}
+            </div>
+            {%endfor%}
+
+        </div>
+        {% endif%}
+        {% endwith %}
+        <h2>Register Page</h2>
+        <p>Still don`t have account? It`s your time to register. </p>
+        <p> <strong>Welcome to Rolsa Technology</strong></p>
+        <form class="login" action="/register" method="post">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Enter your lastname" required>
+
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" placeholder="Enter your address" required>
+
+            <label for="postcode">Post Code</label>
+            <input type="text" id="postcode" name="postcode" placeholder="Enter your post code" required>
+
+            <label for="phone">Phone number</label>
+            <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <label for="confirmedPassword">Comfirm password</label>
+            <input type="password" id="confirmedPassword" name="confirmedPassword" placeholder="Confirm your password" required>
+
+            <button type="submit"> Register </button>
+        </form>
+        <div>
+            <h3>Already have an account? Its time to log in</h3>
+            <a href="login" class="btn"> Log in</a>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+

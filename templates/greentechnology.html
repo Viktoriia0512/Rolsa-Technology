@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green technology</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='greenstyle.css')}}">
+</head>
+<body>
+    <header>
+        <img src="{{url_for('static', filename= 'images/RolsaTechnology.png')}}" alt="Rolsa technology logo" />
+        <h1>Rolsa Technology</h1>
+        <p>Provider of green future</p>
+    </header>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/greentechnology">Green energy</a></li>
+            <li><a href="/tariffs">Schedule your consultation or installation</a></li>
+            <li><a href="/carbon">Calculate your carbon footprints</a></li>
+            <li><a href="/energy">Calculate energy usage</a></li>
+        </ul>
+    </nav>
+    <nav class="register">
+
+        <ul>
+            {% if session %}
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+            {% else %}
+            <li><a href="login">Log in</a></li>
+            <li><a href="register">Register</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <br>
+    <div class="container">
+        <section class="content">
+            <div class="articles">
+                <h2>Green technology which is currently on the market</h2>
+                <div class="article">
+                    <h3>Wind energy</h3>
+                    <img src="{{url_for('static', filename= 'images/windEnergy.jpg')}}" alt="wind energy" />
+                    <p>
+                        Wind is a clean source of renewable energy that produces no air or water pollution. And since the wind is free, operational costs are nearly zero once a turbine is erected.
+                        Mass production and technology advances are making turbines cheaper, and many <strong>governments offer tax</strong> incentives to spur wind-energy development.
+                    </p>
+                    <button onclick="readMore('article1')">Read more </button>
+                    <div id="article1">
+
+                        <p>
+                            Drawbacks include complaints from locals that wind turbines are ugly and noisy.
+                            The slowly rotating blades can also kill birds and bats,
+                            but not nearly as many as cars, power lines, and high-rise buildings do.
+                            The wind is also variable: If it's not blowing, there's no electricity generated.
+                        </p>
+                        <br>
+                        <p>
+                            Nevertheless, the wind energy industry is booming. Thanks to global efforts
+                            to combat climate change, such as the Paris Agreement, renewable energy is seeing a
+                            boom in growth, with wind energy leading the way.
+                            <strong>From 2000 to 2015</strong>, cumulative wind capacity around the world
+                            increased from 17,000 megawatts to more than 430,000 megawatts.
+                            In 2015, China also surpassed the EU in the number of installed wind turbines and continues to lead installation efforts.
+                        </p>
+                        <br>
+                        <p>
+                            Industry experts predict that if this pace of growth continues,
+                            <strong>by 2050</strong> one third of the world's electricity needs will be fulfilled by wind power.
+                        </p>
+                    </div>
+                </div>
+                <div class="article" id="middle">
+                    <h3>Solar panel energy</h3>
+                    <img src="{{url_for('static', filename= 'images/solarEnergy.jpg')}}" alt="solar panel energy" />
+                    <p>
+                        One of the most compelling reasons to install solar panels is their ability to
+                        drastically reduce a household’s or business’s carbon footprint. The UK government
+                        has set ambitious targets to reach net-zero carbon emissions by 2050, and solar
+                        energy is a vital part of this strategy.
+                    </p>
+                    <button onclick="readMore('article2')">Read more </button>
+                    <div id="article2">
+                        <p>
+                            Solar panels generate electricity by harnessing sunlight, a completely clean and
+                            renewable source. Unlike fossil fuels, which release harmful greenhouse gases when
+                            burned, solar power produces no direct emissions. By installing solar panels,
+                            the average UK household can reduce its carbon dioxide (CO2) emissions by
+                            approximately 1.5 to 2 tonnes annually. Over the lifespan of the system,
+                            this reduction can have a substantial impact on combating climate change.
+                        </p>
+                        <br>
+                        <p>
+                            In addition to reducing greenhouse gas emissions, solar panels help decrease other
+                            forms of air pollution. Traditional power plants, especially those that burn coal,
+                            release pollutants such as sulfur dioxide and nitrogen oxides, which contribute to
+                            acid rain and respiratory problems. Solar energy, in contrast, produces no such
+                            pollutants, leading to cleaner air and healthier communities.
+                        </p>
+                        <br>
+                        <p>
+                            The environmental and economic impacts of solar panels in the UK are far-reaching,
+                            extending beyond the immediate benefits of reduced energy bills.
+                            By lowering carbon emissions, enhancing energy independence, boosting the economy,
+                            and driving technological innovation, solar panels are playing a crucial role in
+                            shaping a more sustainable and resilient future.
+                        </p>
+                        <br>
+                        <p>
+                            As the UK continues to pursue its net-zero targets and reduce its reliance on fossil fuels,
+                            the adoption of solar power will only become more important. For homeowners and businesses alike,
+                            investing in solar panels is not just a smart financial decision, but also a powerful contribution
+                            to the fight against climate change and the transition to a greener economy.
+                            Whether motivated by environmental concerns, energy security,
+                            or the desire to enhance property value, the impact of solar panels is undeniable.
+                        </p>
+                    </div>
+                </div>
+                <div class="article">
+                    <h3>Tidal energy</h3>
+                    <img src="{{url_for('static', filename= 'images/TiderEnergy.jpg')}}" alt="tidal energy" />
+                    <p>
+                        Tidal energy is produced by the surge of ocean waters during the rise and fall of
+                        tides. Tidal energy is a renewable source of energy.
+                        During the 20th century, engineers developed ways to use tidal movement to generate
+                        electricity in areas where there is a significant tidal range—the difference in area
+                        between high tide and low tide. All methods use special generators to convert tidal energy into electricity.
+                    </p>
+                    <button onclick="readMore('article3')">Read more </button>
+                    <div id="article3">
+                        <p>
+                            Tidal energy production is still in its infancy.
+                            The amount of power produced so far has been small.
+                            There are very few commercial-sized tidal power plants operating in the world.
+                            The first was located in La Rance, France. The largest facility is the Sihwa Lake Tidal Power Station in South Korea.
+                            The United States has no tidal plants and only a few sites where tidal energy could be produced at a reasonable price.
+                            China, France, England and Canada have much more potential to use this type of energy.
+                        </p>
+                        <br>
+                        <p>
+                            There are currently three different ways to get tidal energy: tidal streams, barrages, and tidal lagoons.
+
+                            For most tidal energy generators, turbines are placed in tidal streams. A tidal stream is a fast-flowing
+                            body of water created by tides. A turbine is a machine that takes energy from a flow of fluid.
+                            That fluid can be air (wind) or liquid (water). Because water is much more dense than air,
+                            tidal energy is more powerful than wind energy. Unlike wind, tides are predictable and stable.
+                            Where tidal generators are used, they produce a steady, reliable stream of electricity.
+                        </p>
+                        <br>
+                        <p>
+                            Placing turbines in tidal streams is complex, because the machines are large and disrupt
+                            the tide they are trying to harness. The environmental impact could be severe,
+                            depending on the size of the turbine and the site of the tidal stream. Turbines are most effective in shallow water.
+                            This produces more energy and allows ships to navigate around the turbines. A tidal generator's turbine blades also
+                            turn slowly, which helps marine life avoid getting caught in the system.
+                        </p>
+                        <br>
+                        <p>
+                            The world's first tidal power station was constructed in 2007 at Strangford Lough in Northern Ireland.
+                            The turbines are placed in a narrow strait between the Strangford Lough inlet and the Irish Sea.
+                            The tide can move at 4 meters (13 feet) per second across the strait.
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="news">
+                <h2>Green technology which is currently on the market</h2>
+                <div class="news-item">
+                    <h3>Wind energy</h3>
+                    <img src="{{url_for('static', filename= 'images/news1photo.jpg')}}" alt="news photo" />
+                    <p></p>
+                    <button onclick="readMore('news-item')">Read more </button>
+                    <div id="news-item">
+                        <p>Full content </p>
+                    </div>
+                </div>
+                <div class="news-item" id="middle">
+                    <h3>Solar panel energy</h3>
+                    <img src="{{url_for('static', filename= 'images/news2photo.png')}}" alt="news photo" />
+                    <p></p>
+                    <button onclick="readMore('news-item1')">Read more </button>
+                    <div id="news-item1">
+                        <p>Full content </p>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <h3>Tidal energy</h3>
+                    <img src="{{url_for('static', filename= 'images/news3photo.jpg')}}" alt="news photo" />>
+                    <p></p>
+                    <button onclick="readMore('news-item2')">Read more </button>
+                    <div id="news-item2">
+                        <p>Full content </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <aside class="asidebar">
+            <h2>Information, which will be interesting for you </h2>
+            <div>
+                <h3>Green Hydrogen</h3>
+                <iframe src="https://www.youtube.com/embed/gLvkWpnzba8" frameborder="0" allowfullscreen></iframe>
+
+            </div>
+
+            <div>
+                <h3>Types of green technology</h3>
+                <img src="{{url_for('static', filename= 'images/typesOfEnergy.jpg')}}" alt="Types of energy" />
+                <a href="https://therenewables.org/types-of-green-technology/" target="_blank" class="btn">Types of green technology</a>
+            </div>
+            <div>
+                <h3>Last news about Green technology </h3>
+                <img src="{{url_for('static', filename= 'images/news3photo.jpg')}}" alt="green technology and future" />
+
+                <a href="https://www.bbc.co.uk/news/uk-england-york-north-yorkshire-68924075" target="_blank" class="btn">Green technology hub</a><br>
+                <a href="https://eandt.theiet.org/2025/03/25/uk-unveils-plan-decarbonise-shipping-2050-green-technologies-and-clean-fuels" target="_blank" class="btn">Carbon-free shipping by 2050</a><br>
+                <a href="https://www.greeneconomy.co.uk/news-and-resources/news/91-of-uk-public-aware-of-net-zero-2050-goal-but-key-knowledge-gaps-could-hinder-progress/" target="_blank" class="btn">Net Zero, key knowledge gaps</a><br>
+
+            </div>
+
+        </aside>
+    </div>
+    <script>
+        function readMore(id) {
+            const content = document.getElementById(id)
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            }
+            else {
+                content.style.display = 'block';
+            }
+
+        }
+    </script>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 Rolsa Technology. All Rights Reserved.</p>
+            <p>Our contact info:</p>
+            <ul>
+                <li>Tel: 0161 5354 1856</li>
+                <li>Email: RolsaTechnolohy@greenenergy.com</li>
+                <li>Address: 10 Main street London L1 4RT</li>
+            </ul>
+        </div>
+
+
+    </footer>
+
+</body>
+
+</html>

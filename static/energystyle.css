@@ -1,0 +1,148 @@
+body {
+    font-family: Arial,sans-serif;
+    background-color: #90cf8e;
+    align-items: center;
+}
+h2 {
+    text-align: center;
+    color: black;
+    margin: 20px 0;
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #78b579;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    button:hover {
+        background-color: #90cf8e;
+    }
+.container {
+    display: block;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+    padding: 20px;
+}
+
+/* Table Styles */
+table {
+    border-collapse: collapse;
+    margin: 20px;
+    margin-bottom:20px;
+    padding:20px;
+    width:100%;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align:center;
+}
+
+th, td {
+    text-align: center;
+    padding: 12px;
+    border: 1px solid black;
+}
+
+th {
+    background-color: #78b579;
+    color: white;
+    font-weight: bold;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(even) td {
+    background-color: #f2f2f2;
+}
+
+header {
+    text-align: center;
+}
+    header img {
+        float: left;
+        width: 100px;
+        height: 100%;
+        display: block;
+    }
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+    background-color: #78b579;
+}
+.main {
+    text-align: center;
+}
+
+    .main ul {
+        display: inline-flex;
+    }
+.main li {
+    float: left;
+}
+
+.register li {
+    float: right;
+}
+.register ul {
+    background-color: #90cf8e;
+}
+
+nav li a {
+    display:inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+    nav li a:hover {
+        background-color: #78c479;
+    }
+
+
+.flash-messages .alert {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    background-color: #f8d7da;
+    color: #721c24;
+    font-family: Arial, sans-serif;
+}

@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tariffs</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='bookingstyle.css')}}">
+</head>
+<body>
+    <header>
+        <img src="{{url_for('static', filename= 'images/RolsaTechnology.png')}}" alt="Rolsa technology logo" />
+        <h1>Rolsa Technology</h1>
+        <p>Provider of green future</p>
+    </header>
+    <nav class="main">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/greentechnology">Green energy</a></li>
+            <li><a href="/tariffs">Schedule your consultation or installation</a></li>
+            <li><a href="/carbon">Calculate your carbon footprints</a></li>
+            <li><a href="/energy">Calculate energy usage</a></li>
+        </ul>
+    </nav>
+    <nav class="register">
+
+        <ul>
+            {% if session %}
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+            {% else %}
+            <li><a href="/login">Log in</a></li>
+            <li><a href="/register">Register</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <br>
+    {% with messages= get_flashed_messages() %}
+    {% if messages %}
+    <div class="flash-messages">
+        {% for message in messages %}
+        <div class="alert">
+            {{message}}
+        </div>
+        {%endfor%}
+    </div>
+    {% endif%}
+    {% endwith %}
+    {% if tariffs %}
+    {% for tariff in tariffs %}
+    <div class="container">
+        <h3>{{tariff.name}}</h3>
+        <p>{{tariff.description}}</p>
+        <p><strong>£ {{tariff.price}}</strong></p>
+        <form action="/tariffs" method="post">
+            <input type="hidden" id="tariff_id" name="tariff_id" value="{{tariff.id}}">
+            <button type="submit">Book now</button>
+        </form>
+
+    </div>
+    <br>
+    {% endfor %}
+    {% else %}
+    <p>no tariffs avalable.</p>
+    {% endif %}
+
+    <footer>
+        <div class="footer-container">
+        <p>&copy; 2025 Rolsa Technology. All Rights Reserved.</p>
+        <p>Our contact info:</p>
+        <ul>
+            <li>Tel: 0161 5354 1856</li>
+            <li>Email: RolsaTechnolohy@greenenergy.com</li>
+            <li>Address: 10 Main street London L1 4RT</li>
+        </ul>
+       </div>
+
+
+    </footer>
+
+</body>
+</html>

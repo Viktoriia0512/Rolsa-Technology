@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Usage</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='energystyle.css')}}">
+
+</head>
+<body>
+    <header>
+        <img src="{{url_for('static', filename= 'images/RolsaTechnology.png')}}" alt="Rolsa technology logo" />
+        <h1>Rolsa Technology</h1>
+        <p>Provider of green future</p>
+    </header>
+    <nav class="main">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/greentechnology">Green energy</a></li>
+            <li><a href="/tariffs">Schedule your consultation or installation</a></li>
+            <li><a href="/carbon">Calculate your carbon footprints</a></li>
+            <li><a href="/energy">Calculate energy usage</a></li>
+        </ul>
+    </nav>
+    <nav class="register">
+
+        <ul>
+            {% if session %}
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+            {% else %}
+            <li><a href="login">Log in</a></li>
+            <li><a href="register">Register</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <br>
+
+
+    <form action="/energy" method="post">
+        <h2>Energy usage calculator</h2>
+
+        <label for="device">Select device</label>
+        <select id="device" name="device" onchange="updatePower()" required>
+            <option value="" disabled selected>--Choose a device--</option>
+            {% for device in devices %}
+            <option value="{{device.name}}" data-power="{{device.power}}">{{device.name}}</option>
+            {% endfor %}
+        </select>
+        <label for="power">Power(Watts)</label>
+        <input type="number" name="power" id="power" placeholder="Please enter power" step="1" min="0" required />
+
+        <label for=" hours"> Hours per day</label>
+        <input type="number" name="hours" id="hours" placeholder="Please enter power" step="1" min="0" max="24" required />
+
+        <button type="submit">Calculate</button>
+    </form>
+
+    <br>
+
+
+    {% if calculation %}
+
+    <div class="container">
+        <h2>Energy usage for device: {{calculation.device_name}}</h2>
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Electricity Usage (kWh) </th>
+                    <th>Cost (£)</th>
+                    <th>Period of time</th>
+                    <th>Time span (days)</th>
+                <tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{calculation.daily_usage}}</td>
+                    <td>{{calculation.daily_cost}}</td>
+                    <td>Day</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>{{calculation.weekly_usage}}</td>
+                    <td>{{calculation.weekly_cost}}</td>
+                    <td>Week</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td>{{calculation.monthly_usage}}</td>
+                    <td>{{calculation.monthly_cost}}</td>
+                    <td>Month</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>{{calculation.yearly_usage}}</td>
+                    <td>{{calculation.yearly_cost}}</td>
+                    <td>Year</td>
+                    <td>365</td>
+                </tr>
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+    
+    <script>
+        function updatePower() {
+            const selectedDevice = document.getElementById('device');
+            const selectedOption = selectedDevice.options[selectedDevice.selectedIndex]
+            const power = selectedOption.getAttribute('data-power')
+            if (power) {
+                document.getElementById('power').value = parseFloat(power);
+
+            } else {
+                document.getElementById('power').value = "";
+            }
+
+        }
+    </script>
+
+</body>
+</html>

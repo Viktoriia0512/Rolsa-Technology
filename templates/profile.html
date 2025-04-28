@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User profile</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='bookingstyle.css')}}">
+</head>
+<body>
+    <div class="container">
+        <h3>Dear, {{name}}</h3>
+        <p>It's all your bookings </p>
+        <a href="/" class="btn">Back to Home page</a>
+        {% with messages= get_flashed_messages() %}
+        {% if messages %}
+        <div class="flash-messages">
+            {% for message in messages %}
+            <div class="success">
+                {{message}}
+            </div>
+            {%endfor%}
+
+        </div>
+        {% endif%}
+        {% endwith %}
+    </div>
+    <br>
+    {% if bookings %}
+    {% for booking in bookings %}
+
+
+    <div class="container">
+
+
+        <p>{{booking.tariff_name}}</p>
+        <h3>{{booking.date}}</h3>
+        <p>{{booking.time}}</p>
+        <p><strong>£ {{booking.amount}}</strong></p>
+        <form action="/cancel" method="post">
+            <input type="hidden" id="booking_id" name="booking_id" value="{{booking.booking_id}}">
+            <button type="submit">Cancel Appointment </button>
+
+</form>
+
+
+    </div>
+        <br>
+        {% endfor %}
+        {% else %}
+        <div class="container">
+            <p>You haven't made any bookings yet</p>
+        </div>
+        {% endif %}
+</body>
+</html>

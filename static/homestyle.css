@@ -1,0 +1,105 @@
+body {
+    font-family: Arial,sans-serif;
+    color: black;
+    background-color: #90cf8e;
+}
+header {
+    text-align: center;
+    display: block;
+    overflow: hidden;
+}
+    header img {
+        float: left;
+        width: 100px;
+        height: 100%;
+        display: block;
+       
+    }
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #78b579 ;
+}
+.main {
+    text-align: center;
+    
+}
+    .main ul {
+        display:inline-flex;
+    }
+.main li {
+    float: left;
+}
+.register ul {
+    background-color: #90cf8e;
+}
+.register li {
+    float: right;
+}
+
+ nav li a {
+    display:inline-block;
+    color:black;
+    text-align:center;
+    padding:14px 16px;
+    text-decoration:none;
+}
+    nav li a:hover {
+        background-color: #78c479;
+    }
+
+
+
+.section {
+    margin:20px;
+    width:auto;
+    height:auto;
+    border-radius:10px;
+    box-shadow:0px,8px,8px rgba(0,0,0,0.2);
+    padding:20px;
+    display:block;
+    overflow:hidden;
+    background-color:white;
+    max-width:100%;
+}
+    .section img {
+        float:left;
+        height:200px;
+        width:300px;
+        margin-left:20px;
+        margin-right:20px;
+        
+    }
+
+
+
+#ev_charger img{
+    float: right;
+    display: block;
+    height: 200px;
+    width: 300px;
+}
+footer {
+   
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #78b579;
+    color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+    .footer-container ul li {
+        display: inline;
+        margin: 0 10px;
+    }
+

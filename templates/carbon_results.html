@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>How to reduce carbon footprint</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='greenstyle.css')}}">
+</head>
+<body>
+    <header>
+        <img src="{{url_for('static', filename= 'images/RolsaTechnology.png')}}" alt="Rolsa technology logo" />
+        <h1>Rolsa Technology</h1>
+        <p>Provider of green future</p>
+    </header>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/greentechnology">Green energy</a></li>
+            <li><a href="/tariffs">Schedule your consultation or installation</a></li>
+            <li><a href="/carbon">Calculate your carbon footprints</a></li>
+            <li><a href="/energy">Calculate energy usage</a></li>
+        </ul>
+    </nav>
+    <nav class="register">
+
+        <ul>
+            {% if session %}
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+            {% else %}
+            <li><a href="login">Log in</a></li>
+            <li><a href="register">Register</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <br>
+    <div class="article">
+        <p>Your total carbon footprint for year is: <strong>{{footprint}}</strong> kg CO₂ </p>
+        <p>There are different steps to reduce carbon: </p>
+    </div>
+    <div class="article">
+        <h2>Travel Smart</h2>
+        <ul>
+            <li>Walk, bike, or use public transport instead of driving.</li>
+            <li>Choose fuel-efficient or electric vehicles.</li>
+            <li>Avoid unnecessary flights—opt for trains or direct flights when possible.</li>
+        </ul>
+    </div>
+    <div class="article">
+        <h2>Eat Sustainably</h2>
+        <ul>
+            <li>Reduce meat in your daily menu.</li>
+            <li>Buy local and seasonal products and food, this allows to reduce transportation emission .</li>
+            <li>Cut down food waste and plan your meals.</li>
+        </ul>
+    </div>
+    <div class="article">
+        <h2>Shop Responsibly</h2>
+        <ul>
+            <li> Choose products with minimal packaging.</li>
+            <li>Buy second-hand clothes and electronics instead of new ones.</li>
+            <li>Support companies with sustainable practices.</li>
+        </ul>
+    </div>
+    <div class="article">
+        <h2>Solar Panels</h2>
+        <p>
+            Solar panels generate electricity from sunlight,
+            reducing reliance on fossil fuels. While manufacturing
+            them does produce some emissions, they offset their carbon
+            footprint within 0.4 to 1.4 years and continue producing
+            clean energy for decades. Over their lifespan, they save
+            dozens of tonnes of CO2 compared to traditional energy sources
+        </p>
+    </div>
+    <div class="article">
+        <h2>EV Chargers</h2>
+        <p>
+            Electric vehicle (EV) chargers help cut transportation emissions
+            by enabling EV adoption. Their carbon footprint depends on the
+            electricity source—charging with renewable energy makes them nearly
+            emission-free, while charging from fossil fuel-powered grids still
+            produces some emissions. Using efficient Level 2 chargers can further reduce energy waste.
+        </p>
+    </div>
+    <div class="article">
+        <h2>Energy Management Systems (EMS)</h2>
+        <p>
+            EMS optimize energy use in buildings by monitoring and adjusting
+            consumption in real time. They can reduce energy waste by up to 30%,
+            directly lowering carbon emissions. When integrated with renewable energy
+            sources, EMS can help buildings achieve 40% reductions in their carbon footprint
+        </p>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 Rolsa Technology. All Rights Reserved.</p>
+            <p>Our contact info:</p>
+            <ul>
+                <li>Tel: 0161 5354 1856</li>
+                <li>Email: RolsaTechnolohy@greenenergy.com</li>
+                <li>Address: 10 Main street London L1 4RT</li>
+            </ul>
+        </div>
+
+
+    </footer>
+
+</body>
+</html>
